@@ -1,0 +1,9 @@
+table{
+  text-align: center;
+}
+.list{
+  display: block;
+}
+#table td{
+  vertical-align: middle;
+}

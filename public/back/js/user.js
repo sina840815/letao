@@ -23,7 +23,7 @@ $(function () {
           currentPage: currentPage,
           totalPages: Math.ceil(info.total / pageSize),
           onPageClicked: function (a, b, c, page) {
-            currenPage = page,
+            currentPage = page,
               render()
           }
         })
