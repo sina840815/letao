@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<div>
+  <!--<p>姓名：小王</p>-->
+  <!--<p>年龄：18</p>-->
+  <!--<p>爱好：乐于助人</p>-->
+  <!--<p>性别：男</p>-->
+  <!--<p>描述：年轻气力盛</p>-->
+</div>
+
+
+
+
+<!--1. 引包-->
+<script src="template-web.js"></script>
+<!--2. 准备模版-->
+<script type="text/html" id="tpl">
+  <p>姓名：{{username.toUpperCase()}}</p>
+  <p>年龄：<%= age %></p>
+  <p>爱好：<%-hobby%></p>
+  <p>性别：{{gender==1?'男':'女'}}</p>
+  <p>描述：{{desc}}</p>
+</script>
+<script>
+
+  //模版+数据 = 结构
+
+  //3. 准备数据
+  var obj = {
+    username:"xiaowangba",
+    age:181,
+    hobby:"<h2>了与主任1</h2>",
+    gender:0,
+    desc:"年轻气力盛1"
+  }
+
+  //4. 让模版与数据进行绑定（调用template）
+  //第一个参数：模版id
+  //第二个参数：必须是一个对象，模版与这个对象绑定之后，在模版中可以直接使用这个对象的所有的属性。
+  var html = template("tpl", obj);
+  document.querySelector("div").innerHTML = html;
+
+</script>
+
+
+</body>
+</html>
